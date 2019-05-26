@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <h2>About Conference Barrel</h2>
+        <ul id="conferences">
+
+        </ul>
+        <script>
+            const url = 'https://conference-barrel-ss.herokuapp.com/api/conferences';
+            fetch(url)
+                .then(data => { return data.json(); })
+                .then(res => {
+                    res.forEach((conference, index) => {
+                        var conferences = document.getElementById('conferences');
+                        var li = document.createElement('li');
+                        var title = document.createTextNode(conference.title);
+                        li.appendChild(title)
+                        conferences.appendChild(li);
+                    });
+                });
+        </script>
+    </body>
+</html>

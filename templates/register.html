@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+<form action="/register" method="POST">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password1" placeholder="Password">
+    <input type="password" name="password2" placeholder="Confirm">
+    <input type="submit" value="Register">
+</form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/conferences/add" method="POST">
+        <input type="text" name="title" placeholder="Conference Title">
+        <input type="date" name="date">
+        <input type="number" name="ticket_cost" step="0.01">
+        <input type="submit" value="Add">
+    </form>
+{% endblock %}

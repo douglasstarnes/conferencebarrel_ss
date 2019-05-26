@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if results | count > 0 %}
+        <ul>
+            {% for result in results %}
+                <li>
+                    <a href="{{ url_for('conferences', conference_id=result.id) }}">{{ result.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found</p>
+    {% endif %}
+{% endblock %}

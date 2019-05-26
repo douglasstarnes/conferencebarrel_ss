@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>List of all conferences.</p>
+    <ul>
+        {% for conference in conferences %}
+            <li>
+                <a href="{{ url_for('conferences', conference_id=conference.id )}}">{{ conference.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Index</a>
+{% endblock %}
